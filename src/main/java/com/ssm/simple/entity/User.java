@@ -33,6 +33,14 @@ public class User {
      */
     private int isDeleted;
     /**
+     * 用户真实姓名
+     */
+    private String trueName;
+    /**
+     * 用户电话
+     */
+    private String  mobile;
+    /**
      * 创建时间
      */
     private Date createTime;
