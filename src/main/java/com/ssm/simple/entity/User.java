@@ -3,7 +3,6 @@ package com.ssm.simple.entity;
 import lombok.Data;
 
 import java.util.Date;
-
 /**
  * 实体类：用户
  *
@@ -31,7 +30,7 @@ public class User {
     /**
      * 是否已经删除 0未删除 1已删除
      */
-    private int isDeleted;
+    private Byte isDeleted;
     /**
      * 用户真实姓名
      */
@@ -39,10 +38,11 @@ public class User {
     /**
      * 用户电话
      */
-    private String  mobile;
+    private String mobile;
     /**
      * 创建时间
      */
     private Date createTime;
-}
 
+
+}
