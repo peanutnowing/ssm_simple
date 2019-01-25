@@ -2,3 +2,5 @@
 /.idea/
 *.iml
 /target/
+/src/main/resources/generator/generatorInit.properties
+/.gitignore
