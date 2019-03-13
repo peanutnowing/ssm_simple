@@ -1,9 +1,6 @@
 package com.ssm.simple.java8;
 
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -26,8 +23,19 @@ public class TestStream {
                 System.out.println(n));
 
 
+        //将字符串列表转换为大写
+        List<String> stringList = Arrays.asList("a", "b", "c", "d");
 
+        List<String> newList = new ArrayList<>();
+        //Java8之前的写法
+        for (String s : stringList) {
+            newList.add(s.toUpperCase());
+        }
+        System.out.println(newList);
 
+        //Java8的写法
+        List<String> collect = stringList.stream().map(String::toUpperCase).collect(Collectors.toList());
+        System.out.println(collect);
 
 
 
