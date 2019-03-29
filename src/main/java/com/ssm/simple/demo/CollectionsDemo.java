@@ -1,4 +1,4 @@
-package com.ssm.simple.utils;
+package com.ssm.simple.demo;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -8,10 +8,10 @@ import java.util.Set;
 import static javafx.scene.input.KeyCode.T;
 
 /**
- * 集合工具类
+ * 集合类用法demo
  * Created by peanutnowing on 2019/3/10.
  */
-public class CollectionsUtils {
+public class CollectionsDemo {
     /**
      * Set转换为List
      * @param set
