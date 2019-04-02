@@ -1,5 +1,7 @@
 package com.ssm.simple.demo;
 
+import sun.security.krb5.internal.PAForUserEnc;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Semaphore;
@@ -12,51 +14,32 @@ import java.util.concurrent.Semaphore;
  */
 public class SemaphoreDemo {
 
-    private static volatile Semaphore semaphore = new Semaphore(0);
+    private static final int THREAD_COUNT = 30;
 
-    public static void main(String[] args) throws InterruptedException {
-        ExecutorService executorService = Executors.newFixedThreadPool(3);
-        // 线程1加入到线程池
-        executorService.submit(new Runnable() {
-            public void run() {
-                try {
-                    System.out.println(Thread.currentThread() +  " 执行完毕");
-                    semaphore.release();
-                } catch (Exception e) {
-                    e.printStackTrace();
+    private static ExecutorService executorService = Executors.newFixedThreadPool(THREAD_COUNT);
+
+    private static Semaphore semaphore = new Semaphore(10);
+
+    public static void main(String[] args) {
+        for (int i=0;i<THREAD_COUNT;i++){
+            executorService.execute(new Runnable() {
+                @Override
+                public void run() {
+                    try {
+                        //获取许可证
+                        semaphore.acquire();
+                        System.out.println("do something");
+                        //归还许可证
+                        semaphore.release();
+                    } catch (InterruptedException e) {
+                        e.printStackTrace();
+                    }
+
                 }
-            }
-        });
-
-        // 线程2加入到线程池
-        executorService.submit(new Runnable() {
-            public void run() {
-                try {
-                    System.out.println(Thread.currentThread() +  " 执行完毕");
-                    semaphore.release();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        // 线程3加入到线程池
-        executorService.submit(new Runnable() {
-            public void run() {
-                try {
-                    System.out.println(Thread.currentThread() +  " 执行完毕");
-                    semaphore.release();
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-
-        // 等待子线程执行完毕，返回
-        semaphore.acquire(3);
-        System.out.println("所有任务执行完毕!");
-
+            });
+        }
         executorService.shutdown();
     }
+
 
 }
