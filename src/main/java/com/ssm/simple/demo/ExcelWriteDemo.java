@@ -1,8 +1,5 @@
 package com.ssm.simple.demo;
 
-import org.apache.poi.hssf.usermodel.HSSFRow;
-import org.apache.poi.hssf.usermodel.HSSFSheet;
-import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
@@ -17,7 +14,7 @@ import java.util.Map;
  * @Author peanutnowing
  * @Date 2019/4/9
  */
-public class ExcelDemo {
+public class ExcelWriteDemo {
     public static void main(String[] args) throws IOException {
         //map集合存储城市ID和城市名称
         Map<Integer,String> map = new HashMap<>();
