@@ -17,15 +17,15 @@ import java.util.Map;
 public class ExcelWriteDemo {
     public static void main(String[] args) throws IOException {
         //map集合存储城市ID和城市名称
-        Map<Integer,String> map = new HashMap<>();
-        map.put(1,"北京");
-        map.put(2,"上海");
-        map.put(3,"广州");
-        map.put(4,"深圳");
-        map.put(5,"杭州");
+        Map<String,String> map = new HashMap<>();
+        map.put("1","北京");
+        map.put("2","上海");
+        map.put("3","广州");
+        map.put("4","深圳");
+        map.put("5","杭州");
 
         //1.创建文件
-        File file = new File("city.xls");
+        File file = new File("city.xlsx");
         OutputStream outputStream = new FileOutputStream(file);
         //2.创建工作簿及工作表
         XSSFWorkbook  workbook = new XSSFWorkbook();
@@ -35,10 +35,10 @@ public class ExcelWriteDemo {
         row.createCell(0).setCellValue("城市ID");
         row.createCell(1).setCellValue("城市名称");
         //4.添加内容——集合数据写入excel中
-        for(Map.Entry<Integer,String> entry: map.entrySet()){
-            Integer key = entry.getKey();
+        for(Map.Entry<String,String> entry: map.entrySet()){
+            String key = entry.getKey();
             String value = entry.getValue();
-            XSSFRow xssFRow = sheet.createRow(key);
+            XSSFRow xssFRow = sheet.createRow(Integer.valueOf(key));
             xssFRow.createCell(0).setCellValue(key);
             xssFRow.createCell(1).setCellValue(value);
         }
