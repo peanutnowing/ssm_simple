@@ -13,7 +13,7 @@ import java.util.concurrent.TimeUnit;
  * @Author peanutnowing
  * @Date 2019/4/26
  */
-public class DemoTask implements Job{
+public class QuartzDemoTask implements Job{
     @Override
     public void execute(JobExecutionContext jobExecutionContext) throws JobExecutionException {
         System.out.println("demoTask start...");
