@@ -15,5 +15,12 @@ public class ForDemo {
                 break;
             }
         }
+        System.out.println("------------");
+        for (int i: array){
+            if(i%2==0) {
+                System.out.println(i);
+                continue;
+            }
+        }
     }
 }
