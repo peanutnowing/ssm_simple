@@ -31,4 +31,14 @@ public class StringDemo {
         String userNames=nameGroup.length()>10?nameGroup.substring(0,10)+"等":nameGroup+"等";
         System.out.println(userNames);*/
     }
+
+    /**
+     * 字符串格式化
+     */
+    @org.junit.Test
+    public void formatStringTest(){
+        String str ="<p><img src=\"%s\"></p><p><video class=\"edui-upload-video vjs-default-skin video-js\" controls=\"\" preload=\"none\" width=\"420\" height=\"280\" src=\"%s\" data-setup=\"{}\">\n" +
+                "<source src=\"%s\" type=\"video/mp4\"/></video></p>";
+        System.out.println(String.format(str,1,11,111));
+    }
 }
