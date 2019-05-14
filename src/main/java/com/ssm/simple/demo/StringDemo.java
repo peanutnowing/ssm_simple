@@ -18,7 +18,7 @@ public class StringDemo {
         String numbers = "[1,2,3,4,5]";
         String[] array = StringSimpleUtils.removeBrackets(numbers);
         for (String str : array) {
-            System.out.println(str);
+            System.out.                                                                   println(str);
         }*/
 
         //熟悉String常用API，比如字符串截取等
@@ -31,6 +31,4 @@ public class StringDemo {
         String userNames=nameGroup.length()>10?nameGroup.substring(0,10)+"等":nameGroup+"等";
         System.out.println(userNames);*/
     }
-
-
 }
