@@ -9,16 +9,18 @@ import com.ssm.simple.utils.StringSimpleUtils;
  * @Date 2019/4/19
  */
 public class StringDemo {
-    public static void main(String[] args) {
-    /*    //去掉括号两种方法 1.截取截取字符串
+    /**
+     * 截取字符串
+     */
+    @org.junit.Test
+    public void subStringTest(){
+       /*    //去掉括号两种方法 1.截取截取字符串
         String numbers = "[1,2,3,4,5]";
         String[] array = StringSimpleUtils.removeBrackets(numbers);
         for (String str : array) {
             System.out.println(str);
-        }
-
-        //2.正则表达式*/
-
+        }*/
+        
         //熟悉String常用API，比如字符串截取等
         String str ="莫斯科没有眼泪：@abcdefg美少女战士001:说得好(✪▽✪)";
         System.out.println(str.substring(str.indexOf(":")+1,str.length()));
@@ -29,4 +31,6 @@ public class StringDemo {
         String userNames=nameGroup.length()>10?nameGroup.substring(0,10)+"等":nameGroup+"等";
         System.out.println(userNames);*/
     }
+
+
 }
