@@ -20,7 +20,7 @@ public class StringDemo {
         for (String str : array) {
             System.out.println(str);
         }*/
-        
+
         //熟悉String常用API，比如字符串截取等
         String str ="莫斯科没有眼泪：@abcdefg美少女战士001:说得好(✪▽✪)";
         System.out.println(str.substring(str.indexOf(":")+1,str.length()));
