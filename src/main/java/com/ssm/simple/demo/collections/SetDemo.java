@@ -1,4 +1,4 @@
-package com.ssm.simple.demo;
+package com.ssm.simple.demo.collections;
 
 import java.util.*;
 

@@ -1,4 +1,4 @@
-package com.ssm.simple.demo;
+package com.ssm.simple.demo.thread;
 
 import sun.security.krb5.internal.PAForUserEnc;
 
