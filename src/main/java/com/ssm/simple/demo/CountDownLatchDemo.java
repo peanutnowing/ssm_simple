@@ -1,5 +1,7 @@
 package com.ssm.simple.demo;
 
+import org.junit.Test;
+
 import java.util.concurrent.CountDownLatch;
 
 /**
@@ -14,7 +16,8 @@ public class CountDownLatchDemo {
 
     private  static CountDownLatch countDownLatch = new CountDownLatch(THREAD_NUMBER);
 
-    public static void main(String[] args) throws InterruptedException {
+    @Test
+    public void countDownLatchTest() throws InterruptedException {
         for (int i = 1; i <=THREAD_NUMBER; i++) {
             int index = i;
             new Thread(()->{
@@ -27,4 +30,5 @@ public class CountDownLatchDemo {
         countDownLatch.await();
         System.out.println("所有选手都已经准备好，比赛开始！");
     }
+
 }
