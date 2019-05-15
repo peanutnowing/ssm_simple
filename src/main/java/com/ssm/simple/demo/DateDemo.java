@@ -1,5 +1,7 @@
 package com.ssm.simple.demo;
 
+import org.junit.Test;
+
 import java.time.LocalTime;
 
 /**
@@ -9,10 +11,11 @@ import java.time.LocalTime;
  * @Date 2019/4/30
  */
 public class DateDemo {
-    public static void main(String[] args) {
+
+    @Test
+    public void localTimeTest(){
         LocalTime localTime = LocalTime.parse("00:30:00");
         LocalTime localTimeNew = localTime.plusMinutes(10L);
         System.out.println(localTimeNew);
-
     }
 }
