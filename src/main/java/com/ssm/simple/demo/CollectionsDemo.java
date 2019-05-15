@@ -1,5 +1,7 @@
 package com.ssm.simple.demo;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
@@ -31,20 +33,8 @@ public class CollectionsDemo {
         Set<String> set = new HashSet<>(list);
         return set;
     }
-
-
-    public static void main(String[] args) {
-       /* Set<String> set = new HashSet<>();
-        set.add("1");
-        set.add("2");
-        set.add("3");
-        for (String str:set){
-            System.out.println(str);
-        }
-        List<String> list = new ArrayList<>(set);
-        for (String str:list) {
-            System.out.println(str);
-        }*/
+    @Test
+    public void listToSetTest(){
         List<String> list = new ArrayList<>();
         list.add("一");
         list.add("二");
@@ -53,11 +43,18 @@ public class CollectionsDemo {
         //List转换Set可以去重
         Set<String> set = new HashSet<>(list);
         for (String str:set
-             ) {
+                ) {
             System.out.println(str);
 
         }
-
-
+    }
+    @Test
+    public void setToListTest(){
+        Set<String> set = new HashSet<>();
+        set.add("1");
+        set.add("2");
+        set.add("3");
+        List<String> list = new ArrayList<>(set);
+        list.forEach(System.out::println);
     }
 }
