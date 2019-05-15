@@ -26,7 +26,13 @@ public class HttpClientDemo {
 
     private static final Logger logger = LoggerFactory.getLogger(HttpClientDemo.class);
 
-    public static void main(String[] args) throws IOException {
+    /**
+     * get方法
+     * @param url
+     * @return
+     * @throws IOException
+     */
+    public static String doGet(String url) throws IOException {
         CloseableHttpClient httpClient = HttpClients.createDefault();//初始化Httpclient
         HttpGet httpGet=new HttpGet("http://www.peanutplan.com");
         CloseableHttpResponse response = null;
@@ -35,13 +41,18 @@ public class HttpClientDemo {
         } catch (IOException e) {
             e.printStackTrace();
         }
-        String entity = EntityUtils.toString (response.getEntity(),"utf-8");
-        System.out.println(entity);
+        String result = EntityUtils.toString (response.getEntity(),"utf-8");
         response.close();
+        return result;
     }
 
+    @org.junit.Test
+    public void getTest() throws IOException {
+        String result = doGet("http://www.peanutplan.com");
+        System.out.println(result);
+    }
     /**
-     * doPost
+     * post方法
      * @param url
      * @param paramMap
      * @return
@@ -74,7 +85,6 @@ public class HttpClientDemo {
                 Map.Entry<String, String> mapEntry = iterator.next();
                 nvps.add(new BasicNameValuePair(mapEntry.getKey(), mapEntry.getValue().toString()));
             }
-
             // 为httpPost设置封装好的请求参数
             try {
                 httpPost.setEntity(new UrlEncodedFormEntity(nvps, "UTF-8"));
