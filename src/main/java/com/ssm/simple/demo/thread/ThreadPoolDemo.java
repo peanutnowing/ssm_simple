@@ -1,5 +1,9 @@
 package com.ssm.simple.demo.thread;
 
+import org.junit.Test;
+
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 /**
@@ -19,6 +23,8 @@ public final class ThreadPoolDemo {
     private static final int keepAliveTime = 8;
 
     private static final BlockingQueue<Runnable> queue = new LinkedBlockingQueue<Runnable>(queueSize);
+
+    private static ExecutorService executorService = Executors.newFixedThreadPool(3);
 
     private static final ThreadPoolExecutor executor = new ThreadPoolExecutor(
             corePoolSize, maximumPoolSize, keepAliveTime, TimeUnit.SECONDS,
@@ -43,4 +49,30 @@ public final class ThreadPoolDemo {
         }
         pool.shutdown();
     }
+
+    @Test
+    public void executeServiceTest(){
+
+        List<Integer> list1 = new ArrayList<>();
+        list1.add(1);
+        list1.add(2);
+        list1.add(3);
+        list1.add(4);
+        list1.add(5);
+        list1.add(6);
+        List<String> list2 = new ArrayList<>();
+        list2.add("a");
+        list2.add("b");
+        list2.add("c");
+        list2.add("d");
+        list2.add("e");
+        list2.add("f");
+
+        executorService.execute(()-> list2.forEach(System.out::println));
+
+        executorService.execute(()->  list1.forEach(System.out::println));
+
+
+    }
+
 }
