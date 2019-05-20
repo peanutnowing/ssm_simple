@@ -2,10 +2,7 @@ package com.ssm.simple.demo.common;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+import java.util.*;
 
 /**
  * lambda表达式的使用
@@ -37,5 +34,18 @@ public class LambdaDemo {
         map.put(3,"c");
         map.put(4,"d");
         map.forEach((key,value)->System.out.println(key+"---"+value));
+    }
+
+    /**
+     * 数组如何在forEach中使用lambda
+     * 先转换为List，再使用
+     */
+    @Test
+    public void arrayDemo(){
+        String[] strArray = new String[]{"苹果","小米","华为"};
+        //数组转成list
+        Arrays.asList(strArray).forEach(System.out::println);
+        //数组转成流
+        Arrays.stream(strArray).forEach(System.out::println);
     }
 }
