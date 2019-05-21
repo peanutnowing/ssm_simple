@@ -153,7 +153,7 @@ public class DateUtil {
      * 当前时间距离凌晨零点的秒数
      * @return
      */
-    public Long getSecondsToMidnight(){
+    public static Long getSecondsToMidnight(){
         Calendar calendar = Calendar.getInstance();
         calendar.add(Calendar.DAY_OF_YEAR,1);
         calendar.set(Calendar.HOUR_OF_DAY,0);
