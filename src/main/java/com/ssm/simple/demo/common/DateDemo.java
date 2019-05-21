@@ -2,7 +2,9 @@ package com.ssm.simple.demo.common;
 import com.ssm.simple.utils.DateUtils;
 import org.junit.Test;
 
+import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.util.Date;
 
 /**
  * 日期demo
@@ -31,5 +33,20 @@ public class DateDemo {
         System.out.println(timeStr);
     }
 
+    /**
+     * 判断一个时间是否在两个时间之间
+     */
+    @Test
+    public void isBetweenTwoTime() {
+        SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
+        String date = sdf.format(new Date());
+        System.out.println(date);
+        int time = Integer.parseInt(date);
+        if (time >=900 && time <=2100) {
+            System.out.println("在这个时间段内");
+        } else {
+            System.out.println("不在这个时间段内");
+        }
+    }
 
 }
