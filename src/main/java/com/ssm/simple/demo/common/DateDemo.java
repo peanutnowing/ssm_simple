@@ -1,5 +1,5 @@
 package com.ssm.simple.demo.common;
-import com.ssm.simple.utils.DateUtil;
+import com.ssm.simple.utils.DateUtils;
 import org.junit.Test;
 
 import java.time.LocalTime;
@@ -24,10 +24,10 @@ public class DateDemo {
      */
     @Test
     public void getSecondsToMidnightTest(){
-        Long time = DateUtil.getSecondsToMidnight();
+        Long time = DateUtils.getSecondsToMidnight();
         System.out.println(time);
         //日时分秒的格式
-        String timeStr = DateUtil.secondsToTime(time/1000);
+        String timeStr = DateUtils.secondsToTime(time/1000);
         System.out.println(timeStr);
     }
 
