@@ -1,4 +1,4 @@
-package com.ssm.simple.demo;
+package com.ssm.simple.demo.common;
 
 import java.text.DateFormat;
 import java.text.ParseException;
