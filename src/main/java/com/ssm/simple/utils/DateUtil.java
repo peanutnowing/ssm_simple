@@ -5,6 +5,7 @@ import java.text.SimpleDateFormat;
 import java.time.Instant;
 import java.time.LocalDate;
 import java.time.ZoneId;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.GregorianCalendar;
 
@@ -147,4 +148,19 @@ public class DateUtil {
         Date date = Date.from(instant);
         return date;
     }
+
+    /**
+     * 当前时间距离凌晨零点的秒数
+     * @return
+     */
+    public Long getSecondsToMidnight(){
+        Calendar calendar = Calendar.getInstance();
+        calendar.add(Calendar.DAY_OF_YEAR,1);
+        calendar.set(Calendar.HOUR_OF_DAY,0);
+        calendar.set(Calendar.SECOND,0);
+        calendar.set(Calendar.MINUTE,0);
+        calendar.set(Calendar.MILLISECOND,0);
+        return (calendar.getTimeInMillis()-System.currentTimeMillis());
+    }
+
 }
