@@ -15,7 +15,7 @@ import java.util.GregorianCalendar;
  * @Author peanutnowing
  * @Date 2019/3/29
  */
-public class DateUtil {
+public class DateUtils {
 
     public static final String YYYYMMDD = "yyyyMMdd";
 

@@ -9,14 +9,14 @@ import java.util.*;
  * @Author peanutnowing
  * @Date 2019/4/9
  */
-public class FileUtil {
+public class FileUtils {
     /**
      * 读取property配置文件
      * @param fileName property文件名
      * @return map形式的property的集合
      */
     public static Map<String,String> getConfig(String fileName){
-        String path =  FileUtil.class.getClassLoader().getResource(fileName).getPath();
+        String path =  FileUtils.class.getClassLoader().getResource(fileName).getPath();
         Map<String, String> map = new HashMap<String, String>();
         InputStream inputStream = null;
         try {
