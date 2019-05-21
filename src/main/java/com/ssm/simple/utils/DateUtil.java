@@ -163,4 +163,23 @@ public class DateUtil {
         return (calendar.getTimeInMillis()-System.currentTimeMillis());
     }
 
+
+    /**
+     * 将秒数转换为日时分秒的格式
+     * @param seconds
+     * @return
+     */
+    public static String secondsToTime(long seconds){
+        long days = seconds / 86400; //先转换天数
+        seconds = seconds % 86400; //计算剩余秒数
+        long hours = seconds / 3600;//再转换小时
+        seconds = seconds % 3600;  //计算剩余秒数
+        long minutes = seconds /60; //转换分钟
+        seconds = seconds % 60;  //计算剩余秒数
+        if(days>0){
+            return days + "天" + hours + "小时" + minutes + "分" + seconds + "秒";
+        }else{
+            return hours + "小时" + minutes + "分" + seconds + "秒";
+        }
+    }
 }
