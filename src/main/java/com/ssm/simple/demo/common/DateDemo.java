@@ -49,4 +49,12 @@ public class DateDemo {
         }
     }
 
+    @Test
+    public void getRemainTimeOneDay(){
+        //获得当天剩余时间(秒)
+        Integer time =  DateUtils.getRemainSecondsOneDay(new Date());
+        String timeStr = DateUtils.secondsToTime(time);
+        System.out.println(timeStr);
+    }
+
 }
