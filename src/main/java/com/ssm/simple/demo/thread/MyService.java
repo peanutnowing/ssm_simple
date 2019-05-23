@@ -12,7 +12,7 @@ import java.util.concurrent.locks.ReentrantLock;
  * @Author peanutnowing
  * @Date 2019/5/23
  */
-public class ConditionDemo {
+public class MyService {
 
     private Lock lock = new ReentrantLock();
 
@@ -39,6 +39,15 @@ public class ConditionDemo {
         }finally {
             lock.unlock();
         }
+
+    }
+
+    public static void main(String[] args) throws InterruptedException {
+        MyService service = new MyService();
+        MyThread myThread = new MyThread(service);
+        myThread.start();
+        Thread.sleep(3000);
+        service.signal();
 
     }
 }
