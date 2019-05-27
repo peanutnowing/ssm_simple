@@ -75,4 +75,28 @@ public final class ThreadPoolDemo {
 
     }
 
+    /**
+     * 线程池打印
+     */
+    @Test
+    public void executeService2Test(){
+        List<Integer> list1 = new ArrayList<>();
+
+        List<Integer> list2 = new ArrayList<>();
+        for(int i=1;i<=20;i++){
+            list1.add(i);
+            list2.add(i+10);
+        }
+        System.out.println("list1's size:"+list1.size());
+
+        System.out.println("list2's size:"+list2.size());
+        executorService.execute(()->  list1.forEach(System.out::println));
+
+        executorService.execute(()-> list2.forEach(System.out::println));
+
+
+
+    }
+
+
 }
