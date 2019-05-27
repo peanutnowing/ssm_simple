@@ -57,4 +57,14 @@ public class DateDemo {
         System.out.println(timeStr);
     }
 
+    /**
+     * 时间比较，可以用先转换为int再比较
+     */
+    @Test
+    public void compareTimeTest(){
+        SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
+        int time = Integer.parseInt(sdf.format(new Date()));
+        System.out.println(time);
+    }
+
 }
