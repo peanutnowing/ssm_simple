@@ -4,6 +4,7 @@ import org.junit.Test;
 
 import java.text.SimpleDateFormat;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 /**
@@ -67,4 +68,15 @@ public class DateDemo {
         System.out.println(time);
     }
 
+    /**
+     * 获取当前时间指定前面多少个小时的时间
+     */
+    @Test
+    public void simpleDateFormatTest(){
+        SimpleDateFormat sdf = new SimpleDateFormat(DateUtils.YYYYMMDDHHMMSS);
+
+        System.out.println(sdf.format(new Date()));
+
+        System.out.println(DateUtils.getBeforeHourTime(3));
+    }
 }
