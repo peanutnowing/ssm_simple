@@ -197,4 +197,19 @@ public class DateUtils {
         long seconds = ChronoUnit.SECONDS.between(currentDateTime, midnight);
         return (int) seconds;
     }
+
+
+    /**
+     * 获取当前时间指定前面多少个小时的时间
+     * @param hour
+     * @return 返回格式yyyyMMddHHmmss
+     */
+    public static String getBeforeHourTime(int hour){
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.HOUR_OF_DAY, calendar.get(Calendar.HOUR_OF_DAY) - hour);
+        SimpleDateFormat df = new SimpleDateFormat("yyyyMMddHHmmss");
+        String time  = df.format(calendar.getTime());
+        return time;
+    }
+
 }
