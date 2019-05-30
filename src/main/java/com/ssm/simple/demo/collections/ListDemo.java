@@ -1,7 +1,10 @@
 package com.ssm.simple.demo.collections;
 
+import org.junit.Test;
+
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -22,4 +25,38 @@ public class ListDemo {
         System.out.println(numList.get(0));
         System.out.println(numList.get(numList.size()-1));
      }
+    @Test
+    public void testArrayList(){
+        List<String> list = new ArrayList<String>();
+        list.add("a");
+        list.add("b");
+        list.add("c");
+        remove2(list,"c");// 删除指定的“b”元素
+        System.out.println(list);
+    }
+
+    /**
+     * 删除ArrayList元素正确的方法
+     * @param list
+     */
+    public static void remove(List<String> list,String target) {
+        Iterator<String> it = list.iterator();
+        while (it.hasNext()) {
+            String str = it.next();
+            if (target.equals(str)) {
+                it.remove();
+            }
+        }
+    }
+    /**
+     * 删除ArrayList元素错误的方法
+     * @param list
+     */
+    public static void remove2(List<String> list,String target) {
+      for (String item : list) {
+        if (target.equals(item)) {
+            list.remove(item);
+        }
+      }
+    }
 }
