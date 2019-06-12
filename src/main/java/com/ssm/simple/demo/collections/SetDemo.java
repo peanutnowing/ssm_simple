@@ -1,5 +1,7 @@
 package com.ssm.simple.demo.collections;
 
+import org.junit.Test;
+
 import java.util.*;
 
 /**
@@ -25,5 +27,18 @@ public class SetDemo {
         }
 
 
+    }
+
+    /**
+     * Set排序
+     */
+    @Test
+    public void sortSet(){
+        Set set1 = new HashSet(Arrays.asList("b c e f g a".split(" ")));
+        Set set2 = new LinkedHashSet(Arrays.asList("b c e f g a".split(" ")));
+        Set set3 = new TreeSet(Arrays.asList("b c e f g a".split(" ")));
+        System.out.println(set1);
+        System.out.println(set2);
+        System.out.println(set3);
     }
 }
