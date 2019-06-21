@@ -3,6 +3,7 @@ import com.ssm.simple.utils.DateUtils;
 import org.junit.Test;
 
 import java.text.SimpleDateFormat;
+import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
 import java.util.Date;
@@ -58,6 +59,8 @@ public class DateDemo {
         System.out.println(timeStr);
     }
 
+
+
     /**
      * 时间比较，可以用先转换为int再比较
      */
@@ -66,6 +69,23 @@ public class DateDemo {
         SimpleDateFormat sdf = new SimpleDateFormat("HHmm");
         int time = Integer.parseInt(sdf.format(new Date()));
         System.out.println(time);
+    }
+
+    /**
+     * 时间比较，可以用先转换为int再比较
+     */
+    @Test
+    public void compareTimeTest1(){
+        DateTimeFormatter ymd = DateTimeFormatter.ofPattern("yyyyMMdd");
+        String currentDate = ymd.format(LocalDate.now());
+
+        int startTime = Integer.parseInt("20190619");
+        int endTime  = Integer.parseInt("20190620");
+
+        int nowDate = Integer.parseInt(currentDate);
+        if(nowDate<startTime||nowDate>endTime){
+            System.out.println("超出开始时间和结束时间了");
+        }
     }
 
     /**
