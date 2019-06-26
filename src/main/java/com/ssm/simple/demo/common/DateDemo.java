@@ -6,6 +6,7 @@ import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Calendar;
 import java.util.Date;
 
 /**
@@ -98,5 +99,20 @@ public class DateDemo {
         System.out.println(sdf.format(new Date()));
 
         System.out.println(DateUtils.getBeforeHourTime(3));
+    }
+
+    /**
+     * 获取指定时间的前几天或后几天
+     */
+    @Test
+    public void getAddOrSubtractDate(){
+        String day = "14";
+        SimpleDateFormat sdf=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+        Date date=new Date();
+        Calendar calendar = Calendar.getInstance();
+        calendar.setTime(date);
+        calendar.add(Calendar.DAY_OF_MONTH, Integer.valueOf(day));
+        date = calendar.getTime();
+        System.out.println(sdf.format(date));
     }
 }
