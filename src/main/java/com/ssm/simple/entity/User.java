@@ -9,7 +9,6 @@ import java.util.Date;
  * @Author peanutnowing
  * @Date 2019/1/21
  */
-@Data
 public class User {
     /**
      * 主键
@@ -45,4 +44,67 @@ public class User {
     private Date createTime;
 
 
+    public Long getId() {
+        return id;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public void setToken(String token) {
+        this.token = token;
+    }
+
+    public Byte getIsDeleted() {
+        return isDeleted;
+    }
+
+    public void setIsDeleted(Byte isDeleted) {
+        this.isDeleted = isDeleted;
+    }
+
+    public String getTrueName() {
+        return trueName;
+    }
+
+    public void setTrueName(String trueName) {
+        this.trueName = trueName;
+    }
+
+    public String getMobile() {
+        return mobile;
+    }
+
+    public void setMobile(String mobile) {
+        this.mobile = mobile;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
+    }
 }
