@@ -2,10 +2,7 @@ package com.ssm.simple.demo.collections;
 
 import org.junit.Test;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.Iterator;
-import java.util.List;
+import java.util.*;
 
 /**
  * List基本用法
@@ -58,5 +55,21 @@ public class ListDemo {
             list.remove(item);
         }
       }
+    }
+
+    /**
+     * List中随机抽取一个值
+     */
+    @Test
+    public void testRandomList(){
+        List<Integer> list = new ArrayList<Integer>();
+        Random random = new Random();
+        list.add(1);
+        list.add(21);
+        list.add(31);
+        list.add(22);
+        list.add(33);
+        list.add(23);
+        System.out.println(list.get(random.nextInt(list.size())));
     }
 }
