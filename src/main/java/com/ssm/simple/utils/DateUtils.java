@@ -212,4 +212,25 @@ public class DateUtils {
         return time;
     }
 
+    /**
+     * 获取两个日期相隔的天数
+     * @param beginDateStr
+     * @param endDateStr
+     * @return
+     */
+    public static long getDaySub(String beginDateStr,String endDateStr) {
+        long day=0;
+        SimpleDateFormat format = new java.text.SimpleDateFormat("yyyy-MM-dd");
+        Date beginDate;
+        Date endDate;
+        try {
+            beginDate = format.parse(beginDateStr);
+            endDate= format.parse(endDateStr);
+            day=(endDate.getTime()-beginDate.getTime())/(24*60*60*1000);
+            //System.out.println("相隔的天数="+day);
+        } catch (ParseException e) {
+            e.printStackTrace();
+        }
+        return day;
+    }
 }
