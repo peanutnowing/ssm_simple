@@ -72,4 +72,51 @@ public class ListDemo {
         list.add(23);
         System.out.println(list.get(random.nextInt(list.size())));
     }
+
+    /**
+     * 删除List中的元素
+     */
+    @Test
+    public void testRemoveList(){
+        List<Integer> list = new ArrayList<Integer>();
+        Random random = new Random();
+        list.add(1);
+        list.add(2);
+        list.add(3);
+        list.add(4);
+        list.add(5);
+        list.add(6);
+        list.add(6);
+        list.add(7);
+        list.add(8);
+        list.add(9);
+        list.add(10);
+        list.add(56);
+        list.add(77);
+
+        Set<Integer> set1 = new HashSet<Integer>();
+        set1.add(1);
+        set1.add(2);
+
+        Set<Integer> set2 = new HashSet<Integer>();
+        set2.add(1);
+        set2.add(56);
+        for (Iterator<Integer> iterator = list.iterator();iterator.hasNext();){
+            Integer integer = iterator.next();
+            if (set1.contains(integer)){
+                iterator.remove();
+            }
+
+        }
+        for (Iterator<Integer> iterator = list.iterator();iterator.hasNext();){
+            Integer integer = iterator.next();
+            if (set2.contains(integer)){
+                iterator.remove();
+            }
+        }
+
+        for (Integer i:list){
+            System.out.println(i);
+        }
+    }
 }
