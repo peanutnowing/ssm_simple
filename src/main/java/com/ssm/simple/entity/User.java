@@ -43,6 +43,11 @@ public class User {
      */
     private Date createTime;
 
+    /**
+     * 年龄
+     */
+    private Integer age;
+
 
     public Long getId() {
         return id;
@@ -108,6 +113,14 @@ public class User {
         this.createTime = createTime;
     }
 
+    public Integer getAge() {
+        return age;
+    }
+
+    public void setAge(Integer age) {
+        this.age = age;
+    }
+
     @Override
     public String toString() {
         return "User{" +
@@ -119,6 +132,7 @@ public class User {
                 ", trueName='" + trueName + '\'' +
                 ", mobile='" + mobile + '\'' +
                 ", createTime=" + createTime +
+                ", age=" + age +
                 '}';
     }
 }
