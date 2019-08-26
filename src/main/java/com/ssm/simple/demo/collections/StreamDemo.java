@@ -4,6 +4,7 @@ import com.ssm.simple.entity.User;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 /**
@@ -76,5 +77,43 @@ public class StreamDemo {
             System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue().get(0));
         }
 
+    }
+
+    /**
+     *list转换为map
+     */
+    @Test
+    public void listToMapTest() {
+        User user1 = new User();
+        user1.setId(1L);
+        user1.setUserName("张三");
+        user1.setAge(27);
+
+        User user2 = new User();
+        user2.setId(2L);
+        user2.setUserName("李四");
+        user2.setAge(21);
+
+        User user3 = new User();
+        user3.setId(3L);
+        user3.setUserName("王五");
+        user3.setAge(29);
+
+        User user4 = new User();
+        user4.setId(4L);
+        user4.setUserName("刘六");
+        user4.setAge(38);
+
+
+        List<User> userList = new ArrayList<>();
+        userList.add(user1);
+        userList.add(user2);
+        userList.add(user3);
+        userList.add(user4);
+
+        Map<Long, User> userMap = userList.stream().collect(Collectors.toMap(User::getId, Function.identity()));
+        for (Map.Entry<Long, User> entry : userMap.entrySet()) {
+            System.out.println("key= " + entry.getKey() + " and value= " + entry.getValue());
+        }
     }
 }
