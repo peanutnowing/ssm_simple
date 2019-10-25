@@ -1,5 +1,12 @@
 package com.ssm.simple.demo;
 
+import org.junit.Test;
+
+import java.lang.reflect.Array;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 /**
  * 循环demo
  *
@@ -23,4 +30,13 @@ public class ForDemo {
             }
         }
     }
+    @Test
+    public void forBreakTest() {
+        int[] src = {1,2,3,4,5,6,7,8,9,10};
+        List<int[]> list = Arrays.asList(src);
+        for(int i=0;i<list.size();i++){
+            System.out.println(list.get(i).toString());
+        }
+    }
+
 }
