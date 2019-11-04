@@ -26,6 +26,7 @@
     <maven.test.skip>true</maven.test.skip>
     <junit.version>4.12</junit.version>
     <commons-collections.version>3.2.2</commons-collections.version>
+    <guava.version>19.0</guava.version>
   </properties>
 
   <dependencies>
@@ -150,6 +151,13 @@
       <artifactId>commons-collections</artifactId>
       <version>${commons-collections.version}</version>
     </dependency>
+
+    <dependency>
+      <groupId>com.google.guava</groupId>
+      <artifactId>guava</artifactId>
+      <version>${guava.version}</version>
+    </dependency>
+
   </dependencies>
 
 
