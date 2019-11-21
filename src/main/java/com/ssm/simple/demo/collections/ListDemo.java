@@ -1,6 +1,4 @@
 package com.ssm.simple.demo.collections;
-
-import org.apache.commons.collections.CollectionUtils;
 import org.junit.Test;
 
 import java.util.*;
@@ -107,7 +105,6 @@ public class ListDemo {
             if (set1.contains(integer)){
                 iterator.remove();
             }
-
         }
         for (Iterator<Integer> iterator = list.iterator();iterator.hasNext();){
             Integer integer = iterator.next();
@@ -121,32 +118,5 @@ public class ListDemo {
         }
     }
 
-    /**
-     * List中随机抽取一个值
-     */
-    @Test
-    public void test1(){
-        List<Integer> list1 = new ArrayList<Integer>();
 
-
-        List<Integer> list2 = new ArrayList<Integer>();
-        list2.add(1);
-        list2.add(21);
-        list2.add(31);
-        list2.add(22);
-        list2.add(33);
-        list2.add(23);
-
-        if (CollectionUtils.isNotEmpty(list1)&&CollectionUtils.isNotEmpty(list2)){
-            System.out.println(1);
-        }else if(CollectionUtils.isNotEmpty(list1)&&CollectionUtils.isEmpty(list2)){
-            System.out.println(2);
-        }else if(CollectionUtils.isEmpty(list1)&&CollectionUtils.isNotEmpty(list2)){
-            System.out.println(3);
-        }else {
-            System.out.println(4);
-        }
-
-
-    }
 }
