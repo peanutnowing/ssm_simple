@@ -1,0 +1,18 @@
+[
+	{
+		"city_name": "北京",
+		"city_id": "bj"
+	},
+	{
+		"city_name": "上海",
+		"city_id": "sh"
+	},
+	{
+		"city_name": "广州",
+		"city_id": "gz"
+	},
+	{
+		"city_name": "深圳",
+		"city_id": "sz"
+	}
+]
