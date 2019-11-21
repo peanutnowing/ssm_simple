@@ -3,6 +3,9 @@ package com.ssm.simple.demo;
 import com.ssm.simple.utils.StringSimpleUtils;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * 字符串处理
  *
@@ -57,5 +60,18 @@ public class StringDemo {
         System.out.println(str1==str2);
         System.out.println(str2==str3);
         System.out.println(str1==str3);
+    }
+
+    @Test
+    public void testSubList(){
+        List<String> list = new ArrayList<>();
+        list.add("aaa");
+        list.add("bbb");
+        list.add("ccc");
+        list.add("ddd");
+        list.add("eeeeee");
+        if (list.size()>=5){
+            System.out.println(list.subList(0,5));
+        }
     }
 }
