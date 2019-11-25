@@ -94,9 +94,24 @@ public final class ThreadPoolDemo {
 
         executorService.execute(()-> list2.forEach(System.out::println));
 
-
-
     }
 
+    @Test
+    public void executeServiceTest3(){
+
+        ExecutorService executorService = Executors.newFixedThreadPool(3);
+//      ExecutorService executorService = Executors.newSingleThreadExecutor();
+        for (int i = 0; i < 5; i++){
+            executorService.execute(new TestRunnable());
+            System.out.println("************* a" + i + " *************");
+        }
+        executorService.shutdown();
+    }
+
+    class TestRunnable implements Runnable{
+        public void run(){
+            System.out.println(Thread.currentThread().getName() + "线程被调用了。");
+        }
+    }
 
 }
