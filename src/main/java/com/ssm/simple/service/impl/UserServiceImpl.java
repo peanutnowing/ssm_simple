@@ -1,6 +1,6 @@
 package com.ssm.simple.service.impl;
 
-import com.ssm.simple.entity.User;
+import com.ssm.simple.po.User;
 import com.ssm.simple.service.UserService;
 
 /**

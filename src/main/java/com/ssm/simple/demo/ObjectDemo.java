@@ -1,6 +1,6 @@
 package com.ssm.simple.demo;
 
-import com.ssm.simple.entity.User;
+import com.ssm.simple.po.User;
 
 /**
  * 对象相关
@@ -11,11 +11,11 @@ import com.ssm.simple.entity.User;
 public class ObjectDemo {
     public static void main(String[] args) {
         User userA = new User();
-        userA.setUserName("超人");
-        userA.setMobile("15800001111");
+        userA.setName("超人");
+        userA.setMobile(15800001111L);
         User userB = new User();
-        userB.setUserName("超人");
-        userB.setMobile("158000011112");
+        userB.setName("超人");
+        userB.setMobile(158000011112L);
         //User对象需要重写equals方法和hashcode方法
         if (userA.equals(userB)){
             System.out.println("两个对象相等");

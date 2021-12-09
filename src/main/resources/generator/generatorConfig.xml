@@ -28,7 +28,7 @@
         </javaTypeResolver>
 
 
-        <javaModelGenerator targetPackage="com.ssm.simple.entity" targetProject="D:\workspace\ssm_simple\src\main\java">
+        <javaModelGenerator targetPackage="com.ssm.simple.po" targetProject="D:\workspace\ssm_simple\src\main\java">
             <property name="enableSubPackages" value="false"/>
             <property name="constructorBased" value="false"/>
             <property name="trimStrings" value="true"/>

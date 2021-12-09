@@ -1,13 +1,12 @@
 package com.ssm.simple.demo.collections;
 
-import com.ssm.simple.entity.User;
+import com.ssm.simple.po.User;
 import org.junit.Test;
 
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.*;
 import java.util.function.Function;
@@ -50,27 +49,27 @@ public class StreamDemo {
     public void streamGroupTest(){
         User user1 = new User();
         user1.setId(1L);
-        user1.setUserName("张三");
+        user1.setName("张三");
         user1.setAge(27);
 
         User user2 = new User();
         user2.setId(2L);
-        user2.setUserName("李四");
+        user2.setName("李四");
         user2.setAge(21);
 
         User user3 = new User();
         user3.setId(3L);
-        user3.setUserName("王五");
+        user3.setName("王五");
         user3.setAge(29);
 
         User user4 = new User();
         user4.setId(4L);
-        user4.setUserName("刘六");
+        user4.setName("刘六");
         user4.setAge(38);
 
         User user5 = new User();
         user5.setId(1L);
-        user5.setUserName("张三");
+        user5.setName("张三");
         user5.setAge(26);
 
         List<User> userList = new ArrayList<>();
@@ -103,22 +102,22 @@ public class StreamDemo {
     public void listToMapTest() {
         User user1 = new User();
         user1.setId(1L);
-        user1.setUserName("张三");
+        user1.setName("张三");
         user1.setAge(27);
 
         User user2 = new User();
         user2.setId(2L);
-        user2.setUserName("李四");
+        user2.setName("李四");
         user2.setAge(21);
 
         User user3 = new User();
         user3.setId(3L);
-        user3.setUserName("王五");
+        user3.setName("王五");
         user3.setAge(29);
 
         User user4 = new User();
         user4.setId(4L);
-        user4.setUserName("刘六");
+        user4.setName("刘六");
         user4.setAge(38);
 
 

@@ -1,6 +1,6 @@
 package com.ssm.simple.dao;
 
-import com.ssm.simple.entity.User;
+import com.ssm.simple.po.User;
 /**
  * DAO:用户
  *

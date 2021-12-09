@@ -1,6 +1,6 @@
 package com.ssm.simple.service;
 
-import com.ssm.simple.entity.User;
+import com.ssm.simple.po.User;
 
 /**
  * 用户相关接口

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
 <mapper namespace="com.ssm.simple.dao.UserMapper" >
-  <resultMap id="BaseResultMap" type="com.ssm.simple.entity.User" >
+  <resultMap id="BaseResultMap" type="com.ssm.simple.po.User" >
     <id column="id" property="id" jdbcType="BIGINT" />
     <result column="user_name" property="userName" jdbcType="VARCHAR" />
     <result column="password" property="password" jdbcType="VARCHAR" />
@@ -24,7 +24,7 @@
     delete from t_user
     where id = #{id,jdbcType=BIGINT}
   </delete>
-  <insert id="insert" parameterType="com.ssm.simple.entity.User" >
+  <insert id="insert" parameterType="com.ssm.simple.po.User" >
     insert into t_user (id, user_name, password, 
       token, is_deleted, true_name, 
       mobile, create_time)
@@ -32,7 +32,7 @@
       #{token,jdbcType=VARCHAR}, #{isDeleted,jdbcType=TINYINT}, #{trueName,jdbcType=VARCHAR}, 
       #{mobile,jdbcType=VARCHAR}, #{createTime,jdbcType=TIMESTAMP})
   </insert>
-  <insert id="insertSelective" parameterType="com.ssm.simple.entity.User" >
+  <insert id="insertSelective" parameterType="com.ssm.simple.po.User" >
     insert into t_user
     <trim prefix="(" suffix=")" suffixOverrides="," >
       <if test="id != null" >
@@ -87,7 +87,7 @@
       </if>
     </trim>
   </insert>
-  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.simple.entity.User" >
+  <update id="updateByPrimaryKeySelective" parameterType="com.ssm.simple.po.User" >
     update t_user
     <set >
       <if test="userName != null" >
@@ -114,7 +114,7 @@
     </set>
     where id = #{id,jdbcType=BIGINT}
   </update>
-  <update id="updateByPrimaryKey" parameterType="com.ssm.simple.entity.User" >
+  <update id="updateByPrimaryKey" parameterType="com.ssm.simple.po.User" >
     update t_user
     set user_name = #{userName,jdbcType=VARCHAR},
       password = #{password,jdbcType=VARCHAR},
