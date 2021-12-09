@@ -24,7 +24,7 @@
     <mybatis.version>3.2.5</mybatis.version>
     <mybatis-spring.version>1.2.2</mybatis-spring.version>
     <maven.test.skip>true</maven.test.skip>
-    <junit.version>4.12</junit.version>
+    <junit.version>4.13.1</junit.version>
     <commons-collections.version>3.2.2</commons-collections.version>
     <guava.version>19.0</guava.version>
 
